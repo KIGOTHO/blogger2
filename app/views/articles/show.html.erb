@@ -6,6 +6,11 @@
   <% end %>
 </p>
 <%= @article.body %><br>
+<p><% if @article.image.exists? %>
+    <%= image_tag @article.image.url %>
+    <% end %>
+
+</p>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: "articles/comment", collection: @article.comments %>
 <%= render partial: "comments/form" %>
