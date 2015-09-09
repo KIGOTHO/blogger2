@@ -15,5 +15,7 @@
 <%= render partial: "articles/comment", collection: @article.comments %>
 <%= render partial: "comments/form" %>
 <%= link_to "back to articles", articles_path(@articles)%>
+<% if logged_in? %>
 <%= link_to "Delete ", article_path(@article), method: :delete,data: {confirm: "really delete the article"} %>
 <%= link_to "edit", edit_article_path(@article)%>
+<% end %>

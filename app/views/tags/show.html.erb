@@ -7,4 +7,6 @@
 
   <% end %>
 </ul>
-    <%= link_to  "Delete", tag_path(@tag), method: :delete%>
+<% if logged_in? %> 
+<%= link_to  "Delete", tag_path(@tag), method: :delete%>
+<% end %>
